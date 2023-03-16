@@ -1,0 +1,204 @@
+.chatbox {
+    background-color: #343541;
+    width: 100%;
+    position: relative;
+}
+
+.chatbox__inputHolder{
+    width: 70%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    position: absolute;
+    bottom: 32px;
+    left: 15%;
+    border-radius: 5px;
+}
+
+.chatbox__input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 0 16px;
+    font-size: 0.9rem;
+    background-color: #40414F;
+    color: #fff;
+    outline: none;
+
+    box-shadow: 0 0 0 1px #555659;
+}
+
+.chatbox__sendIcon{
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all ease 0.25s;
+    position: absolute;
+    right: 1.5rem;
+    
+    transition: all ease 0.25s;
+}
+
+.chatbox__sendIcon:hover{
+    color: #00B87C;
+}
+
+.chatbox__messages{
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 32px;
+    padding-bottom: 80px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.chatbox__message{
+    width: 100%;
+    height: auto;
+    display: flex;
+    
+    align-items: center;
+
+    padding: 3% 0;
+    color: white;
+
+    border-bottom: 1px solid rgba(32,33,35,.5);
+}
+
+.chatbox__message.me .chatbox__message--name{
+    border: 1px solid #2880BC;
+    background-color: #2880BC;
+}
+.chatbox__message.bot .chatbox__message--name{
+    border: 1px solid #00B87C;
+    background-color: #00B87C;
+}
+.chatbox__message--name{
+    font-weight: bold;
+    
+    text-align: center;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    font-size: 2rem;
+    margin-bottom: 4px;
+    margin-right: 32px;
+    margin-left: 15%;
+
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatbox__message.me{
+    background-color: #343541;
+}
+
+.chatbox__message.bot{
+    background-color: #444654;
+}
+
+pre:has( > code){
+    background-color: black;
+    border-top: #00B87C 3px solid;
+    width: 90%;
+    max-width: 800px;
+    font-size: 1rem;
+    padding: 16px 32px;
+    box-sizing: border-box;
+}
+
+.language-javascript::before{
+    content: "Code in JavaScript \A \A";
+    color: #00ff11;
+}
+.language-python::before{
+    content: "Code in Python \A \A";
+    color: #00ff11;
+}
+
+.language-css::before{
+    content: "Code in CSS \A \A";
+    color: #00ff11;
+}
+
+.language-html::before{
+    content: "Code in HTML \A \A";
+    color: #00ff11;
+}
+
+.hljs-keyword,
+.hljs-selector-tag{
+    color: #00B87C;
+}
+
+.hljs-title.function_{
+    color: #ff2cc7;
+}
+
+.hljs-comment,
+.hljs-attribute{
+    color: #00ddff;
+}
+
+.hljs-name,
+.hljs-selector-pseudo{
+    color: #d00026;
+}
+
+.hljs-attr,
+.hljs-selector-id{
+    color: #ff4400e9;
+}
+
+table,
+tr,
+td,
+th {
+  border: 1px solid #868686;
+}
+
+table{
+    padding: 0!important;
+    border-spacing: 0!important;
+    text-align: center;
+    table-layout: fixed;
+    width: 80%;
+}
+th{
+    padding: 12px;
+    color: white;
+    font-weight: bolder;
+}
+
+td{
+    padding: 8px;
+}
+
+pre{
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+
+}
+
+.aulaBtn{
+    display: absolute;
+    top: 0;
+}
