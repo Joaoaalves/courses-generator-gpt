@@ -4,6 +4,10 @@
     position: relative;
 }
 
+.chatbox__messages::-webkit-scrollbar {
+    display: none;
+}
+
 .chatbox__inputHolder{
     width: 70%;
     height: 48px;
@@ -62,18 +66,28 @@
     align-items: center;
 
 }
+.chatbox__message--text{
+    width: 70%;
+}
 
 .chatbox__message{
     width: 100%;
     height: auto;
-    display: flex;
-    
-    align-items: center;
 
-    padding: 3% 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    padding: 3% 5%;
+    box-sizing: border-box;
     color: white;
 
     border-bottom: 1px solid rgba(32,33,35,.5);
+}
+
+p{
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .chatbox__message.me .chatbox__message--name{
@@ -94,7 +108,6 @@
     font-size: 2rem;
     margin-bottom: 4px;
     margin-right: 32px;
-    margin-left: 15%;
 
     border-radius: 4px;
 
@@ -201,4 +214,18 @@ pre{
 .aulaBtn{
     display: absolute;
     top: 0;
+}
+
+#chat-menu{
+    position: absolute;
+    top: 0;
+    right: 32px;
+    z-index: 100;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+}
+
+#chat-menu .MuiMenu-paper{
+    background-color: transparent;
 }

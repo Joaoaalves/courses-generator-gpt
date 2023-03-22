@@ -4,12 +4,12 @@ import { AiOutlinePlus } from 'react-icons/ai';
 import {BsChatLeft, BsTrash} from 'react-icons/bs'
 import {HiOutlinePencilAlt} from 'react-icons/hi'
 import { useState } from 'react';
+import { Button } from '@mui/material';
+
+import Api from '../lib/api'
 
 const Sidebar = () => {
     const [conversations, setConversations] = useState([])
-    const handleNewConversation = () => {
-        setConversations([...conversations, { name: 'New Conversation', id: conversations.length + 1, messages:[] }])
-    }
 
     const handleDeleteConversation = (e) => {
         const conversationId = parseInt(e.target.parentElement.id)
@@ -18,13 +18,27 @@ const Sidebar = () => {
 
     }
 
+    const handleFileUpload = (e) => {
+        const formData = new FormData();
+        formData.append("curso", e.target.files[0]);
+
+
+        Api.newCurso(formData).then((response) => {
+            console.log(response)
+        })
+    }
+
 
     return (
         <aside className="sidebar">
-            <div className="sidebar__newChat" onClick={handleNewConversation}>
-                <AiOutlinePlus className='sidebar__newChat-icon' />
-                <span>Novo Curso</span>
-            </div>
+            <Button
+            variant="contained"
+            component="label"
+            id="sidebar__newChat"
+          >
+            Novo Curso +
+            <input type="file" hidden onChange={handleFileUpload} />
+          </Button>
 
             <div className="sidebar__conversations">
                 {conversations.map((conversation, index) => {
